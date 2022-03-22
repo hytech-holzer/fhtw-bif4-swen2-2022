@@ -6,6 +6,9 @@ import patterns.mediator.ChatRoom;
 import patterns.mediator.ChatService;
 import patterns.observer.Blog;
 import patterns.observer.User;
+import patterns.templatemethod.ContractEmployee;
+import patterns.templatemethod.Employee;
+import patterns.templatemethod.PermanentEmployee;
 
 public class Main {
 
@@ -13,6 +16,15 @@ public class Main {
         commandDemo();
         observerDemo();
         mediatorDemo();
+        templateMethodDemo();
+    }
+
+    private static void templateMethodDemo() {
+        Employee employee1 = new PermanentEmployee();
+        Employee employee2 = new ContractEmployee();
+
+        System.out.println(employee1.getProjectDetails());
+        System.out.println(employee2.getProjectDetails());
     }
 
     private static void mediatorDemo() {
